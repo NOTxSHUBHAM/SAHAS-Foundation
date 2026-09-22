@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sahas Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #2952a3; --text-dark: #333; --text-light: #555; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { color: var(--text-dark); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        header { align-items: center; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; padding: 10px 50px; min-height: 80px; }
+        .logo-container { align-items: center; color: var(--primary-blue); display: flex; flex-direction: column; }
+        .logo-icon { font-size: 24px; font-weight: 700; }
+        .logo-text { color: var(--text-light); font-size: 10px; text-align: center; }
+        nav ul { display: flex; gap: 30px; list-style: none; }
+        nav a { color: var(--primary-blue); font-size: 14px; font-weight: 500; text-decoration: none; }
+        nav a:hover { color: #4169e1; }
+        main { margin: 0 auto; max-width: 900px; padding: 80px 20px; text-align: center; }
+        h1 { color: var(--primary-blue); font-size: 36px; margin-bottom: 20px; }
+        p { color: var(--text-light); margin: 0 auto 20px; max-width: 650px; }
+        .project-list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 40px; text-align: left; }
+        .project { border: 1px solid #d9e0ef; padding: 24px; }
+        .project h2 { color: var(--primary-blue); font-size: 20px; margin-bottom: 10px; }
+        @media (max-width: 900px) { header { flex-direction: column; gap: 15px; padding: 20px; } nav ul { flex-wrap: wrap; gap: 15px; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container"><div class="logo-icon">SAHAS</div><div class="logo-text">Spreading Aid Health And Smiles Foundation</div></div>
+        <nav><ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul></nav>
+    </header>
+    <main>
+        <h1>Our Projects</h1>
+        <p>SAHAS supports education, health care, and elder care initiatives for people who need a helping hand.</p>
+        <div class="project-list">
+            <article class="project"><h2>Education Support</h2><p>Helping children continue their education with essential resources.</p></article>
+            <article class="project"><h2>Health Care</h2><p>Supporting treatment and medical needs in local communities.</p></article>
+            <article class="project"><h2>Community Care</h2><p>Responding to urgent needs during difficult times.</p></article>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Sahas Foundation</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2952a3;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-gray: #f2f2f2;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background: white;
+            height: 80px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary-blue);
+        }
+        
+        .logo-icon {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-size: 10px;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #4169E1;
+        }
+
+        /* --- TEAM SECTION --- */
+        .team-section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-section h1 {
+            color: var(--primary-blue);
+            font-size: 36px;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .member-name {
+            color: var(--primary-blue);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .member-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            background: var(--bg-gray);
+            min-height: 350px;
+            margin-top: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+            background: var(--primary-blue);
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-left h3 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+        }
+
+        .footer-left p {
+            font-size: 13px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-left .highlight {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .footer-right {
+            flex: 1;
+            background: #f0f0f0; /* Light gray */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-right h3 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-right p {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .newsletter-form input {
+            border: none;
+            border-bottom: 1px solid var(--primary-blue);
+            background: transparent;
+            padding: 10px;
+            width: 250px;
+            margin-bottom: 20px;
+            outline: none;
+            text-align: center;
+        }
+
+        .newsletter-form button {
+            background: none;
+            border: none;
+            color: #8a2be2; /* Purple */
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+            background: white;
+        }
+
+        /* --- CHAT WIDGET --- */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8a2be2; /* Purple */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            footer {
+                flex-direction: column;
+            }
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-member {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">SAHAS</div>
+            <div class="logo-text">Spreading Aid Health And Smiles Foundation</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h1>Our Current Members</h1>
+        
+        <div class="team-grid">
+            <!-- Member 1 -->
+            <div class="team-member">
+                <div class="member-name">Mr. Surendra Chavhan</div>
+                <p class="member-desc">
+                    AMFI certificate holder, has his own investment firm and is into consultancy for 12+ years. Since last few years, involved with social work also.
+                </p>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="team-member">
+                <div class="member-name">Mr. Debjit Kar</div>
+                <p class="member-desc">
+                    MBA with a successful marketing career for last 20+ years. Despite killing work schedule, feels responsible and thinks we must give something in return to society.
+                </p>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="team-member">
+                <div class="member-name">Mrs. Shakuntala Gandhi</div>
+                <p class="member-desc">
+                    Homemaker & social worker since the last 30+ years.
+                </p>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="team-member">
+                <div class="member-name">Mrs. Usha Sundaram</div>
+                <p class="member-desc">
+                    Retired bank employee, much involved with various charity projects for last 25+ years.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h3>Contact Us</h3>
+            <p>B-144, Kalpataru Sparkle, Gandhi Nagar, Bandra (E),<br>Mumbai-400051<br>INDIA</p>
+            <p>Registration No: 2190/2019.</p>
+            <p>Mobile: +91-8850994284</p>
+            <p class="highlight">sahasfoundationmumbai@gmail.com</p>
+        </div>
+        <div class="footer-right">
+            <h3>Be The First To Know</h3>
+            <p>Sign up to our newsletter to stay informed</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email">
+                <button type="button">Subscribe Now</button>
+            </form>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        &copy; 2023 Sahas Foundation
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <i class="fas fa-comment"></i>
+    </div>
+
+</body>
+</html>

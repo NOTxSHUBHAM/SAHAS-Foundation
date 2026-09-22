@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sahas Foundation</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2952a3;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-gray: #f2f2f2;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background: white;
+            height: 80px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary-blue);
+        }
+        
+        .logo-icon {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-size: 10px;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #4169E1;
+        }
+
+        /* --- CERTIFICATE SECTION (Top) --- */
+        .cert-section {
+            position: relative;
+            /* Using a generic image of children in classroom similar to your screenshot */
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center top;
+            padding-bottom: 60px; /* Space for the white box overlap */
+        }
+
+        .cert-info-box {
+            background: white;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            top: 150px; /* Pulls it up slightly relative to background, or adjust padding */
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* To mimic the layout where the image is behind the box */
+        .cert-wrapper {
+            padding-top: 150px; /* Push content down */
+            margin-bottom: 0;
+        }
+
+        .cert-content {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            top: 50px; /* Overlap effect */
+        }
+
+        .cert-content h2 {
+            color: var(--primary-blue);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .cert-content p {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            line-height: 1.5;
+            text-align: justify; /* Justified as per screenshot */
+            text-align-last: center;
+        }
+
+        .view-cert-btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 25px;
+            margin-top: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .view-cert-btn:hover {
+            background-color: #1e3d7a;
+        }
+
+        /* --- OUR STORY SECTION --- */
+        .story-section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-section h1 {
+            color: var(--primary-blue);
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .story-content {
+            text-align: justify;
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            background: var(--bg-gray);
+            min-height: 350px;
+            margin-top: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+            background: var(--primary-blue);
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-left h3 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 22px;
+        }
+
+        .footer-left p {
+            font-size: 13px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-left .highlight {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .footer-right {
+            flex: 1;
+            background: #f0f0f0; /* Light gray */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-right h3 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-right p {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .newsletter-form input {
+            border: none;
+            border-bottom: 1px solid var(--primary-blue);
+            background: transparent;
+            padding: 10px;
+            width: 250px;
+            margin-bottom: 20px;
+            outline: none;
+            text-align: center;
+        }
+
+        .newsletter-form button {
+            background: none;
+            border: none;
+            color: #8a2be2; /* Purple */
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+            background: white;
+        }
+
+        /* --- CHAT WIDGET --- */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8a2be2; /* Purple */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            footer {
+                flex-direction: column;
+            }
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .story-section h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">SAHAS</div>
+            <div class="logo-text">Spreading Aid Health And Smiles Foundation</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Top Certificate Section -->
+    <div class="cert-section">
+        <!-- This div structure mimics the white box overlapping the image -->
+        <div class="cert-content">
+            <h2>Sahas Foundation</h2>
+            <p>
+                The foundation is registered with the Charity Commissioner of Mumbai under Society Registration Act 1860 with Registration Number 2190/2019, dated December 18, 2019. A formal certificate has also been obtained from the appropriate authority that all donations to the Foundation are tax-free* to the donors Registered under The Society Registration Act 1860, Registration No.: 2190/2019.
+            </p>
+            <p>
+                Donations to the society is exempt under section 80G(5) of the IT Act 1961 vide provisional certificate no ABVAS8438DF20231 dated 13/03/2023, issued by Commissioner of IT, valid till 31-03-2026.
+            </p>
+            <button class="view-cert-btn">View Certificate</button>
+        </div>
+    </div>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <h1>Our Story</h1>
+        <div class="story-content">
+            <p>
+                SAHAS was conceived by a few of us post-retirement, free from the shackles of a scheduled work life, wanting to give back to society a little of what our country gave us, inspired by an article we happened to come to just at that time. The story was about a few friends from a locality, with similar thinking, who had come together to be able to provide some aid to the needy which we as individuals they were not able to.
+            </p>
+            <p>
+                Seven of us then, some retirees, some still working, one a housewife, one a doctor decided we would collect a small amount each month so that at opportune moments we were able to do something, give our small contribution to where it was needed. So started we, collecting a thousand rupees each month from each one of us. As luck would have it, just around the time floods devastated Assam. By the time we had about rupees fifty thousand in our coffers. So as soon as a friend said any small help would go a long way, we emptied our collection!
+            </p>
+            <p>
+                Things started coming to our notice and then we had Himanshu from Dharavi Art working with the children of Dharavi slums. He said they could do with some help and so there we were. In the meantime, also, we read about Hatkalwadi where there was severe water shortage. We made a trip and saw the object condition of the people living there. This was a large-scale project, which we were not equipped to deal with. We didn't have that kind of money or man power. But that gave us an idea. We needed to be organised so others would join us with their generosity. For any such project, money was of extreme importance. We thought of giving ourselves a name. After much discussion, we agreed on SAHAS-Courage. Charity begins at home as they say. We needed Courage-SAHAS, to go on with our dream. SAHAS gave us the courage to go ahead and help others and give them SAHAS, too. We applied to the Charity Commission and got ourselves registered as an Association / Trust. There were no end of nay-sayers. But there were as many who encouraged us and assured us that they would extend all possible help and are living up to the promise they made.
+            </p>
+            <p>
+                Even as we were getting all the paper-work done one of us had an accident and was laid up with a broken back. Then happened COVID. Everything was stalled for two years. Some more of us retired. Our below Doctor Aunty expired. But the latter half of 2022 had us working at getting on the track. So, we applied for a bank account to keep all transactions transparent. We were also in the process of getting the income tax certifications for tax exemption for donors. That task was also successfully completed with the help of friends. However, all through this our collection continued. So, when COVID happened we approached doctors too, to ask in what way we could help. Dr Padmini Desai and Dr Ajit Desai suggested we could make our contribution towards purchase of medical equipment and other material required for treating COVID patients. We were there.
+            </p>
+            <p>
+                For by now we had a respectable amount collected. Himanshu also approached for the slum children's food. We could do that, too. We were so happy. Individually, most of the Founders are doing our little bit for society. Couple of us volunteer for social work with orphanages, one is a life member with another orphanage, some are doing good work along with temple trusts, sponsoring education of the girl child through an NGO, some sponsoring the education of their house-help.
+            </p>
+            <p>
+                The list is extensive. Crux of the matter is - we want to do more for the society. We want to do things in elder care, education and health care. Everything requires money. Donors are our backbone. For elder care dependable and trustworthy personnel are required. Which requires money. So, to start with we decided to concentrate on education and we have ourselves decided to sponsor 6 kids' education.
+            </p>
+            <p>
+                With monetary help from the public more such kids can be educated. We also want to adopt TB patients----take care of their treatment as well as the health of the family.
+            </p>
+            <p>
+                But for every project that we conceive, YOU, the people of India are needed. Become our member if you like or remain a donor if you so wish. But please be there to help the less privileged.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h3>Contact Us</h3>
+            <p>B-144, Kalpataru Sparkle, Gandhi Nagar, Bandra (E),<br>Mumbai-400051<br>INDIA</p>
+            <p>Registration No: 2190/2019.</p>
+            <p>Mobile: +91-8850994284</p>
+            <p class="highlight">sahasfoundationmumbai@gmail.com</p>
+        </div>
+        <div class="footer-right">
+            <h3>Be The First To Know</h3>
+            <p>Sign up to our newsletter to stay informed</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email">
+                <button type="button">Subscribe Now</button>
+            </form>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        &copy; 2023 Sahas Foundation
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <i class="fas fa-comment"></i>
+    </div>
+
+</body>
+</html>
